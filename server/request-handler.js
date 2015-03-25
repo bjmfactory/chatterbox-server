@@ -39,7 +39,7 @@ exports.requestHandler = function(request, response) {
   //
   // You will need to change this if you are sending something
   // other than plain text, like JSON or HTML.
-  headers['Content-Type'] = "text/plain";
+  headers['Content-Type'] = "application/json";
 
   // .writeHead() writes to the request line and headers of the response,
   // which includes the status and all headers.
@@ -52,7 +52,7 @@ exports.requestHandler = function(request, response) {
   //
   // Calling .end "flushes" the response's internal buffer, forcing
   // node to actually send all the data over to the client.
-  response.end("Hello, World!");
+  response.end("hello");
 };
 
 // These headers will allow Cross-Origin Resource Sharing (CORS).
@@ -62,7 +62,7 @@ exports.requestHandler = function(request, response) {
 // Your chat client is running from a url like file://your/chat/client/index.html,
 // which is considered a different domain.
 //
-// Another way to get around this restriction is to serve you chat
+// Another way to get around this restriction is to serve your chat
 // client from this domain by setting up static file serving.
 var defaultCorsHeaders = {
   "access-control-allow-origin": "*",
